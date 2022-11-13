@@ -59,7 +59,7 @@ const magicStr = [
     ,`起来就看到这么多作业死死死死死死死死死死死死死死死死死死`
     ,`Happy Birthday to You
   Happy Birthday to You
-  Happy Birthday Dear (programmer)
+  Happy Birthday Dear (coder)
   Happy Birthday to You.`
   ,`其实大家长期生活在高压的环境下，情绪有点小问题是正常哒～一定学会自我调节，要相信一切都会啊啊啊啊啊啊啊啊啊啊啊饿啊啊啊啊啊啊啊啊啊啊！哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈！fjfuyfcjufbjigbu！啥！砂！杀！沙！纱！煞！鲨！刹！痧！霎！榝！殺！歃！硰！好起来的哒！～加油（≧∇≦） 我的精神挺好的呀 我的神好挺的精呀 挺精呀我的好的 精挺好我的神的呀 我好的精神的呀 的好的呀上勾拳！下勾拳！左勾拳！扫堂腿！回旋踢！蜘蛛吃耳屎，龙卷风摧毁停车场！羚羊蹬，山羊跳！乌鸦坐飞机！老鼠走迷宫！大象踢腿！愤怒的章鱼！巨斧砍大树！彻底疯狂！彻底疯狂！彻底疯狂！彻底疯狂！彻底疯狂！彻底疯狂！彻底疯狂！彻底疯狂！彻底疯狂！！！！！
   ！`,
@@ -68,6 +68,7 @@ const magicStr = [
 `火狐狸太可爱了`,
 `Evan is so cute`
 ,`What's for dinner?`  
+,`PHP is the best language in the world`
 ]
 
   
