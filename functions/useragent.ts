@@ -7,7 +7,7 @@ export async function onRequest(context) {  // Contents of context object
     next, // used for middleware or to fetch assets    
     data, // arbitrary space for passing data between middlewares  
 } = context;
-    userAgent = request.headers.get('User-Agent') || '';
+    let userAgent = request.headers.get('User-Agent');
     return new Response(userAgent);
   }
   
