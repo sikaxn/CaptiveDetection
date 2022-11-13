@@ -16,6 +16,8 @@ By using /ipaddr functions, client device can determine it ip address.
 
 /useragent will return client useragent
 
+/magicstr will return bunch of random stuff
+
 
 # Demo
 
