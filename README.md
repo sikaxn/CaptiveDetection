@@ -1,6 +1,10 @@
 # CaptiveDetection
 
-A site hosted on Cloudflare to act as a internet connection detection tool.
+A site hosted on Cloudflare to act as a internet connection detection tool. 
+
+This tool can determine weather a client device can reach internet. It can also be used to trigger Captive Protal if such network is connected. This can be done by calling the destnated Cloudflare Pages address. 
+
+By using /ipaddr functions, client device can determine it ip address. 
 
 # Functions:
 
