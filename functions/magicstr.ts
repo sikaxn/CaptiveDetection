@@ -74,14 +74,8 @@ Happy Birthday to You.`
 ]
 
 
-async function onRequest(context){
-  event.respondWith(handleRequest(event.request));
-};
-
-
-
-// Define the handleRequest function
-async function handleRequest(request) {
+// Define the Cloudflare Pages function
+export async function handler(request: Request): Promise<Response> {
   // Check if the request method is GET
   if (request.method === "GET") {
     // Get a random string from the array
