@@ -1,6 +1,6 @@
 
 
-const magicStr = [
+const strings = [
   `学习哪有不疯的？硬撑罢了！出不去哪有不疯的？硬撑罢了！没关系 精神稳定一分钟也很厉害了 没精神关系稳定一分钟也很厉害了 没dhdhb精定神稳一分钟也厉很害了  没guan没关系 精稳①分这个发言太过火了，应该立刻向锅中下入葱姜八角香叶，加入生抽，倒入一罐可乐，放盐，盖盖转小火焖十分钟，加水淀粉勾芡，小火收汁，撒上白芝麻，这样一道美味的可乐鸡翅就做好了并且红色是毁灭 蓝色是冷漠 绿色是伪装 白色是虚无 粉色是虚伪 紫色是神秘 橙色是愤怒 黑色是归宿 黄色发给我妈的，忍不了，一拳把地球打爆！妈的，忍不了，一拳把地球打爆！妈的，忍不了，一拳把地球打爆！妈的，忍不了，一拳把地球打爆！妈的，忍不了，一拳把地球打爆！妈的，忍不了，一拳把地球打爆！妈的，忍不了，一拳把地球打爆！妈的，忍不了，一拳把地球打爆！妈的，忍不了，一拳把地球打爆！妈的，忍不了，一拳把地球打爆！妈的，忍不了，一拳把地球打爆！妈的，忍不了，一拳把地球打爆！妈的，忍不了，一拳把地球打爆！妈的，忍不了，一拳把地球打爆！妈的，忍不了，一拳把地球打爆！妈的，忍不了，一拳把地球打爆！妈的，忍不了，一拳把地球打爆！妈的，忍不了，一拳把地球打爆！他奶奶的鸡蛋六舅的哈密瓜妹妹的大窝瓜爷爷的大鸡腿婶婶的大葡萄妈妈的黄瓜菜爸爸的大面包三舅姥爷的大李子二婶的桃子三叔的西瓜七舅姥爷的小荔枝二舅姥爷的火龙果姑姑的猕猴桃祖爷爷的车厘子祖姥爷的大菠萝祖奶奶的大榴莲二爷的小草莓他三婶姥姥的大白菜他哥哥的大面条妹妹的小油菜弟弟的西葫芦姐姐的大土豆姐夫的大青椒爷爷的大茄子嗯啊，杀杀杀！！好可怕杀杀杀杀杀杀上勾拳！下勾拳！左勾拳！右勾拳！扫堂腿！回旋踢！这是蜘蛛吃耳屎，这是龙卷风摧毁停车场！这是羚羊蹬，这是山羊跳！乌鸦坐飞机！老鼠走迷宫！大象踢腿！愤怒的章鱼！巨斧砍大树！彻底疯狂！彻底疯狂！彻底疯狂！彻底疯狂！彻底疯狂！彻底疯狂！彻底疯狂！彻底疯狂！彻底疯狂！`
   ,`We re no strangers to love
 You know the rules and so do I (do I)
@@ -74,12 +74,33 @@ Happy Birthday to You.`
 ]
 
 
-  
-  function get_random (list) {
-    return list[Math.floor((Math.random()*list.length))];
-  }
-  
 
-export async function onRequestGet({ params }) {  
-    return new Response(get_random(magicStr));
+
+// Define the Cloudflare Worker route
+addEventListener("fetch", event => {
+  event.respondWith(handleRequest(event.request));
+});
+
+// Define the handleRequest function
+async function handleRequest(request) {
+  // Check if the request method is GET
+  if (request.method === "GET") {
+    // Get a random string from the array
+    const randomString = strings[Math.floor(Math.random() * strings.length)];
+
+    // Create a new response with the random string and CORS headers
+    const response = new Response(randomString, {
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET",
+        "Access-Control-Allow-Headers": "Content-Type",
+        "Content-Type": "text/plain",
+      },
+    });
+
+    return response;
+  } else {
+    // If the request method is not GET, return a 405 Method Not Allowed response
+    return new Response("Method Not Allowed", { status: 405 });
+  }
 }
