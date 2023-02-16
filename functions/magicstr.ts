@@ -74,12 +74,11 @@ Happy Birthday to You.`
 ]
 
 
-
-
-// Define the Cloudflare Worker route
-addEventListener("fetch", event => {
+async function onRequest(context){
   event.respondWith(handleRequest(event.request));
-});
+};
+
+
 
 // Define the handleRequest function
 async function handleRequest(request) {
